@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Personal | Brenda Romero</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <a href="#sobre-mi" class="encabezado__logo">Brenda Romero</a>
+
+        <nav class="menu__principal">
+            <ul class="menu__lista">
+                <li><a href="#sobre-mi" class="menu__enlace">HOLA</a></li>
+                <li><a href="#proyectos" class="menu__enlace">CONOCIMIENTOS</a></li>
+                <li><a href="#habilidades" class="menu__enlace">PROYECTOS</a></li>
+                <li><a href="#contacto" class="menu__enlace-boton">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre-mi" class="seccion presentacion-inicial">
+            <div class="presentacion__contenedor">
+                <div class="presentacion__texto">
+                    <h1>¡Hola! Soy <span class="nombre-destacado">Brenda Romero</span></h1>
+                    <p>Descripción personal: Desarrolladora, ETC</p>
+                    <a href="#conocimientos" class="boton__primario">LO QUE HAGO</a>
+                </div>
+                <figure class="presentacion__imagen">
+                    <img src="img/ilustracion-brenda.png" alt="Ilustración de Brenda Romero">
+                </figure>
+            </div>
+        </section>
+
+        <section id="conocimientos" class="seccion conocimientos">
+            <h2 class="seccion__titulo">Mis conocimientos</h2>
+            <p class="seccion__subtitulo">Aquí tienes una lista de las tecnologías y herramientas que manejo.</p>
+            <div class="conocimientos__grilla">
+                <article class="tarjeta__conocimiento">
+                    <img src="img/html5.svg" alt="Logo de HTML 5">
+                    <p>HTML 5</p>
+                </article>
+                <article class="tarjeta__conocimiento">
+                    <img src="img/javascript.svg" alt="Logo de JavaScript">
+                    <p>JavaScript</p>
+                </article>
+                <article class="tarjeta__conocimiento">
+                    <img src="img/git.svg" alt="Logo de GIT">
+                    <p>GIT</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="seccion cita__destacada">
+            <blockquote class="cita__bloque">
+                <p class="cita__texto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis neque id ipsum
+                    iure velit magni dolorum a quasi impedit, ducimus eaque modi, deleniti labore libero nobis amet
+                    ipsam dolorem. Quos!</p>
+                <cite class="cita__autor">brenda romero</cite>
+            </blockquote>
+        </section>
+
+        <section id="proyectos" class="seccion proyectos">
+            <h2 class="seccion__titulo">Mis Proyectos</h2>
+            <p class="seccion__subtitulo">Aquí tienes una lista de mis proyectos más recientes.</p>
+            <div class="proyectos__grilla">
+                <article class="proyectos__tarjeta">
+                    <h3 class="proyectos__titulo">Nombre del Proyecto</h3>
+                </article>
+                <article class="proyectos__tarjeta">
+                    <h3 class="proyectos__titulo">Nombre del Proyecto</h3>
+                </article>
+                <article class="proyectos__tarjeta">
+                    <h3 class="proyectos__titulo">Nombre del Proyecto</h3>
+                </article>
+            </div>
+        </section>
+
+        <section id="contacto" class="seccion contacto">
+            <div class="contacto__contenedor">
+                <div class="contacto__info">
+                    <h2 class="contacto__titulo">Contactame</h2>
+                    <p>Estoy disponible para nuevos proyectos y oportunidades laborales. ¡Hablemos!</p>
+                    <address class="contacto__redes">
+                        <p class="redes__item">Numero Telefono (Wpp)</p>
+                        <p class="redes__item">Usuario IG</p>
+                        <p class="redes__item">brennahirromero@mail.com</p>
+                    </address>
+                </div>
+
+                <form action="#" method="POST" class="contacto__formulario">
+                    <h3 class="formulario__titulo">Escribime</h3>
+
+                    <div class="formulario__grupo-campos">
+                        <div class="campo__simple">
+                            <label for="nombre">Nombre*</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="ej: Brenda" required>
+                        </div>
+                        <div class="campo__simple">
+                            <label for="apellido">Apellido*</label>
+                            <input type="text" id="apellido" name="apellido" placeholder="ej: Romero" required>
+                        </div>
+                    </div>
+
+                    <div class="campo__simple">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" placeholder="ej: brenda.romero@mail.com" required>
+                    </div>
+
+                    <div class="campo__simple">
+                        <label for="mensaje">Mensaje*</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escriba un mensaje aquí" required></textarea>
+                    </div>
+
+                    <button type="submit" class="boton__primario">Enviar</button>
+                </form>
+        </section>
+    </main>
+
+     <footer class="pie-pagina">
+        <nav class="menu__pie">
+            <ul class="menu__lista">
+                <li><a href="#sobre-mi" class="menu__enlace">HOLA</a></li>
+                <li><a href="#conocimientos" class="menu__enlace">CONOCIMIENTOS</a></li>
+                <li><a href="#proyectos" class="menu__enlace">PROYECTOS</a></li>
+                <li><a href="#contacto" class="menu__enlace">CONTACTO</a></li>
+            </ul>
+        </nav>
+
+        <div class="pie__redes-sociales">
+            <a href="URL_WPP" aria-label="WhatsApp">Icono</a>
+            <a href="URL_LINKEDIN" aria-label="LinkedIn">Icono</a>
+            <a href="URL_INSTAGRAM" aria-label="Instagram">Icono</a>
+        </div>
+
+        <p class="pie__copyright">Hecho con ❤️ por Brenda Romero</p>
+    </footer>
+
+</body>
+
+</html>
