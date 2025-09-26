@@ -37,8 +37,8 @@ html {
     --color-texto-destacado: #FFFFFF;
 
     /*TIPOGRAFIA*/
-    --fuente-principal: 'Poppins';
-    --fuente-titulos: Arial, sans-serif;
+    --fuente-principal: 'Montserrat';
+    --fuente-titulos: 'Poppins';
 
     /*ESPACIADO*/
     --espaciado-principal: 2rem;
@@ -89,6 +89,8 @@ ESTILOS GENERALES (MOBILE FIRST)
     font-size: 3rem;
     margin-bottom: 1rem;
     font-family: var(--fuente-titulos);
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .seccion__subtitulo {
@@ -125,12 +127,11 @@ ENCABEZADO Y NAVEGACIÓN
 ============================
 */
 .encabezado {
-    padding: 1rem 1rem;
+    padding: 1.5rem var(--espaciado-principal);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 0.1rem solid var(--color-fondo-oscuro);
     background-color: var(--color-fondo-claro);
     position: sticky;
     top: 0;
@@ -139,10 +140,18 @@ ENCABEZADO Y NAVEGACIÓN
 }
 
 .encabezado__logo {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 0;
-    color: var(--color-purpura-acento)
+    margin-right: 1.5rem;
+    color: var(--color-purpura-acento);
+    flex-shrink: 0;
+    /*Evita que el logo se reduzca*/
+}
+
+.menu__principal {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .menu__lista {
@@ -154,13 +163,14 @@ ENCABEZADO Y NAVEGACIÓN
 
 .menu__enlace {
     padding: 0.3rem 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
     transition: color 0.3s;
+    white-space: nowrap;
+    /*Evita que los enlaces se dividan en varias líneas*/
 }
 
-.menu__enlace:hover,
-.menu__activo {
+.menu__enlace:hover {
     color: var(--color-purpura-acento);
 }
 
@@ -168,13 +178,15 @@ ENCABEZADO Y NAVEGACIÓN
 .menu__enlace-boton {
     background: var(--gradiente-boton);
     color: var(--color-texto-destacado);
-    padding: 0.6rem 1rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 0.5rem;
     margin-top: 0;
     text-transform: uppercase;
     font-weight: 500;
     transition: all 0.3s ease;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    /*Evita que el botón se reduzca*/
 }
 
 .menu__enlace-boton:hover {
@@ -188,20 +200,43 @@ ENCABEZADO Y NAVEGACIÓN
 SECCION PRESENTACION (PRESENTACION INICIAL)
 ============================
 */
-.presentacion-inicial,
-.contacto {
-    background-color: var(--color-fondo-oscuro);
+.presentacion-inicial {
+    min-height: calc(100vh - 9rem);
+    /*Altura mínima para cubrir la pantalla completa menos el header*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /*Alineado a la IZQ*/
+    text-align: left;
+
+    background-image: linear-gradient(rgba(132, 130, 232, 0.4), rgba(132, 130, 232, 0.55)), url('../img/fondo-portada.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: transparent;
 }
 
 .presentacion__texto h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+    font-size: 4.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-family: var(--fuente-titulos);
+    color: var(--color-texto-destacado);
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 }
 
 .presentacion__texto .nombre-destacado {
-    color: var(--color-purpura-acento);
+    color: var(--color-rosa-principal);
     transition: color 0.3s;
+    display: block;
+    /*Forzamos que el "rol" vaya abajo de "nombre"*/
+    font-size: 2.8rem;
+    font-weight: 400;
+    /*Brillo sutil Neon*/
+    text-shadow: 0 0 10px var(--color-rosa-principal),
+        0 0 20px rgba(255, 0, 100, 0.4);
 }
 
 .presentacion__texto p {
@@ -210,63 +245,94 @@ SECCION PRESENTACION (PRESENTACION INICIAL)
     margin-bottom: 2.5rem;
 }
 
-.presentacion__imagen {
-    margin-top: 3rem;
-}
-
-.presentacion__imagen img {
-    border-radius: 1rem;
-    max-width: 30rem;
-    /*Limita el tamaño de la imagen en Movil*/
-    border: 0.5rem solid transparent;
-    box-shadow: 0 0 0 0.5rem var(--color-purpura-acento),
-        0 0 0 0.7rem var(--color-rosa-principal);
-}
-
 .presentacion__texto .nombre-destacado:hover {
-    color: var(--color-rosa-principal);
+    color: var(--color-purpura-acento);
 }
 
 /*
 ============================
-CITA DESTACADA
+SOBRE MI
 ============================
 */
-.cita__destacada {
-    background: var(--gradiente-principal);
-    /*Degradado de IZQ a DER*/
-    color: var(--color-texto-destacado);
-    padding: 8rem var(--espaciado-principal);
+.mi-presentacion-completa {
+    background-color: var(--color-fondo-oscuro);
+    padding: 6rem var(--espaciado-principal);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    /* Apilados en móvil (texto arriba, ilustración abajo) */
+    align-items: center;
+    /* Centra el contenido si hay espacio sobrante */
 }
 
-.cita__bloque {
+.sobre-mi__contenedor {
     max-width: 60rem;
     margin: 0 auto;
-    position: relative;
+    order: 1;
+    /* El texto va primero en móvil */
 }
 
-.cita__comillas {
-    font-size: 10rem;
-    position: absolute;
-    top: -3rem;
-    left: 50%;
-    color: rgba(255, 255, 255, 0.3);
-    /*Color blanco con opacidad*/
-    transform: translateX(-50%);
-    font-family: var(--fuente-titulos);
-    line-height: 0;
+.mi-presentacion-completa .seccion__titulo {
+    color: var(--color-purpura-acento);
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
-.cita__texto {
-    font-size: 2.4rem;
-    font-style: italic;
+.seccion__parrafo-inicial,
+.seccion__parrafo-final {
+    font-size: 1.7rem;
     margin-bottom: 2rem;
+    font-weight: 400;
 }
 
-.cita__autor {
-    display: block;
+.sobre-mi__lista-pilares {
+    background-color: rgba(132, 130, 232, 0.05);
+    padding: 3rem;
+    margin-top: 3rem;
+    padding-left: 2.5rem;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+}
+
+.sobre-mi__lista-pilares li {
     font-size: 1.6rem;
-    font-weight: bold;
+    margin-bottom: 0;
+    list-style: none; 
+    text-indent: 0;    
+    /* ÉNFASIS VISUAL PARA EL TEXTO DEL ÍTEM */
+    font-weight: 500; 
+    color: var(--color-texto-principal);
+    display: flex;
+    align-items: flex-start;
+}
+
+.sobre-mi__lista-pilares li i {
+    color: var(--color-rosa-principal); 
+    margin-right: 1.5rem;
+    font-size: 1.8rem; 
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+.sobre-mi__lista-pilares li:hover i {
+    transform: scale(1.1); 
+    color: var(--color-purpura-acento); 
+}
+
+.sobre-mi__ilustracion-contenedor {
+    margin-top: 4rem;
+    order: 2;
+    /* La ilustración va después del texto en móvil */
+    max-width: 35rem;
+}
+
+.sobre-mi__ilustracion-contenedor img {
+    width: 100%;
+    height: auto;
 }
 
 /*
@@ -274,14 +340,6 @@ CITA DESTACADA
 GRILLAS Y TARJETAS (CONOCIMIENTOS Y PROYECTOS)
 ============================
 */
-.conocimientos__grilla,
-.proyectos__grilla {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-}
-
 /*TARJETAS BASE*/
 .tarjeta__conocimiento,
 .proyectos__tarjeta {
@@ -289,17 +347,27 @@ GRILLAS Y TARJETAS (CONOCIMIENTOS Y PROYECTOS)
     box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
     padding: 2rem;
     border-radius: 1rem;
-    width: 90%;
-    max-width: 30rem;
+    width: 100%;
+    max-width: 25rem;
     text-align: center;
     transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
     border: 0.2rem solid transparent;
 }
 
+.conocimientos__grilla,
+.proyectos__grilla {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); /* 1 o 2 columnas pequeñas en móvil */
+    gap: 2.5rem; 
+    max-width: 90%;
+    margin: 0 auto; 
+    justify-items: center; 
+}
+
 .tarjeta__conocimiento:hover,
 .proyectos__tarjeta:hover {
     transform: translateY(-0.5rem);
-    border: 0.2rem solid var(--color-purpura-acento);
+    border: 0.1rem solid var(--color-purpura-acento);
     box-shadow: 0 0.8rem 1.2rem rgba(153, 51, 204, 0.2);
 }
 
@@ -369,9 +437,9 @@ CONTACTO Y FORMULARIO
 }
 
 .redes__item {
-    display: flex; 
+    display: flex;
     align-items: center;
-    gap: 1rem; 
+    gap: 1rem;
     font-size: 1.8rem;
     font-weight: 500;
     color: var(--color-texto-principal);
@@ -380,12 +448,12 @@ CONTACTO Y FORMULARIO
 
 .redes__item i {
     /*Estilo del ícono*/
-    color: var(--color-rosa-principal); 
+    color: var(--color-rosa-principal);
     font-size: 2.2rem;
 }
 
 .redes__item:hover {
-    color: var(--color-purpura-acento); 
+    color: var(--color-purpura-acento);
 }
 
 /*CAMPOS DEL FORMULARIO*/
@@ -478,3 +546,138 @@ PIE DE PÁGINA
 RESPONSIVE (MEDIA QUERIES)
 ======================================= 
 */
+/* TABLETAS Y PANTALLAS MEDIANAS (768px en adelante) */
+@media (min-width: 768px & max-width: 1024px) {
+    .seccion {
+        padding: 8rem 4rem;
+    }
+    .seccion__titulo {
+        font-size: 3.8rem;
+    }
+    .seccion__subtitulo {
+        font-size: 2rem;
+    }
+
+    /* *** PORTADA (PRESENTACION INICIAL) *** */
+    .presentacion__texto h1 {
+        font-size: 5.5rem; 
+    }
+    .presentacion__texto .nombre-destacado {
+        font-size: 3.5rem; 
+        display: inline; /* Pone el rol junto al nombre */
+        margin-left: 1.5rem;
+    }
+    .presentacion-inicial {
+        /* Permite que el contenido no se pegue al borde en pantallas más grandes */
+        padding-left: 4rem; 
+        padding-right: 4rem; 
+    }
+
+    /* *** GRILLA DE CONOCIMIENTOS *** */
+    /* Grilla de 3 columnas (o 2 columnas grandes) */
+    .conocimientos__grilla {
+        display: grid;
+        /* Al menos 2 columnas en tablet */
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); 
+        gap: 3rem; 
+        max-width: 90rem; 
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    /* *** GRILLA DE PROYECTOS *** */
+    .proyectos__grilla {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas */
+        gap: 3rem;
+        max-width: 100rem;
+        margin: 0 auto;
+    }
+    .proyectos__tarjeta {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* *** CONTACTO (LADO A LADO) *** */
+    .contacto__contenedor {
+        max-width: 100rem;
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+        text-align: left;
+    }
+    .contacto__info {
+        width: 50%;
+        padding-right: 2rem;
+        border-right: 0.1rem solid var(--color-fondo-oscuro); /* Separador vertical */
+        border-bottom: none; /* Quitamos el separador móvil */
+        padding-bottom: 0;
+    }
+    .contacto__formulario {
+        width: 50%;
+    }
+    .formulario__grupo-campos {
+        display: flex;
+        gap: 2rem;
+    }
+    .formulario__grupo-campos .campo__simple {
+        width: 50%;
+    }
+}
+
+/* DESKTOP Y PANTALLAS GRANDES (1025px en adelante) */
+@media (min-width: 1025px) {
+    .seccion {
+        padding: 10rem var(--espaciado-principal); 
+    }
+
+    /* *** HEADER / NAVEGACIÓN *** */
+    .menu__lista {
+        gap: 1.5rem;
+    }
+    .menu__enlace {
+        font-size: 1.5rem;
+    }
+
+    /* *** SOBRE MÍ (TEXTO E IMAGEN LADO A LADO) *** */
+    .mi-presentacion-completa {
+        flex-direction: row; /* Cambiamos a fila */
+        gap: 8rem; 
+        justify-content: center;
+        align-items: center;
+        max-width: var(--ancho-maximo); 
+        margin: 0 auto;
+    }
+    .sobre-mi__contenedor {
+        width: 55%; 
+        order: 1; 
+        max-width: none; 
+    }
+    .sobre-mi__ilustracion-contenedor {
+        width: 35%; /* La imagen es más pequeña que el texto */
+        order: 2; 
+        margin-top: 0;
+    }
+
+    /* *** GRILLA DE CONOCIMIENTOS *** */
+    .conocimientos__grilla {
+        /* 4 columnas en desktop */
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 4rem; 
+    }
+
+    /* *** GRILLA DE PROYECTOS *** */
+    .proyectos__grilla {
+        grid-template-columns: repeat(3, 1fr); /* Mantenemos 3 columnas */
+        gap: 4rem;
+    }
+    
+    /* *** PIE DE PÁGINA (Poner en una línea) *** */
+    .pie-pagina {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .menu__pie .menu__lista {
+        flex-direction: row;
+    }
+}

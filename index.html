@@ -11,9 +11,11 @@
 
 <body>
     <header class="encabezado">
+        <a href="#portada" class="encabezado__logo">BR</a>
+
         <nav class="menu__principal">
             <ul class="menu__lista">
-                <li><a href="#sobre-mi" class="menu__enlace menu__activo">HOLA</a></li>
+                <li><a href="#sobre-mi" class="menu__enlace">SOBRE MI</a></li>
                 <li><a href="#conocimientos" class="menu__enlace">CONOCIMIENTOS</a></li>
                 <li><a href="#proyectos" class="menu__enlace">PROYECTOS</a></li>
                 <li><a href="#contacto" class="menu__enlace-boton">CONTACTO</a></li>
@@ -22,18 +24,46 @@
     </header>
 
     <main>
-        <section id="sobre-mi" class="seccion presentacion-inicial">
+        <section id="portada" class="seccion presentacion-inicial">
             <div class="presentacion__contenedor">
                 <div class="presentacion__texto">
-                    <h1>¡Hola! Soy <span class="nombre-destacado">BRENDA ROMERO</span></h1>
-                    <p>Descripción personal: Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde labore
-                        mollitia quod perferendis a officiis quasi tenetur ipsum quos dolores hic natus perspiciatis,
-                        excepturi tempora atque pariatur cupiditate numquam officia.</p>
-                    <a href="#conocimientos" class="boton__primario">LO QUE HAGO</a>
+                    <h1>BRENDA ROMERO | <span class="nombre-destacado">DESARROLLADORA WEB FRONTEND</span></h1>
+                    <a href="#proyectos" class="boton__primario">LO QUE HAGO</a>
                 </div>
-                <figure class="presentacion__imagen">
-                    <img src="img/presentacion.png" alt="Ilustración de Presentacion">
-                </figure>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="seccion mi-presentacion-completa">
+            <div class="sobre-mi__contenedor">
+                <h2 class="seccion__titulo">Mi Viaje en el Desarrollo</h2>
+
+                <p class="seccion__parrafo-inicial">
+                    Soy Brenda, y mi entrada al mundo del código se ha convertido en una pasión por la creación. Si
+                    bien mi viaje está en sus etapas iniciales, mi enfoque es: la busqueda constante de
+                    aprender, perfeccionar y aplicar las mejores prácticas. Cada proyecto es una
+                    oportunidad para elevar la calidad.
+                </p>
+
+                <ul class="sobre-mi__lista-pilares">
+                    <li><i class="fas fa-search-plus"></i>Obsesión por el Detalle: No es solo que
+                        funcione, es que se vea y se sienta bien. La precisión visual y la coherencia del diseño
+                        son
+                        mi punto de partida.</li>
+                    <li><i class="fas fa-brain"></i>Mentalidad Estructurada y Detallista: Mi formación
+                        dota de un pensamiento lógico y eficiente. Busco soluciones limpias y elegantes
+                        desde el inicio.</li>
+                    <li><i class="fas fa-rocket"></i>Perfeccionamiento Continuo: Estoy en constante búsqueda de
+                        nuevos métodos. Me intriga ir más allá del código funcional para dejar una marca.</li>
+                </ul>
+
+                <p class="seccion__parrafo-final">
+                    Estoy lista para contribuir a proyectos donde la calidad y experiencia visual son
+                    prioridades. Si buscas a alguien con determinación, pasión y un ojo para el detalle, hablemos!.
+                </p>
+            </div>
+
+            <div class="sobre-mi__ilustracion-contenedor">
+                <img src="img/ilustracion-sobre-mi.png" alt="Ilustración">
             </div>
         </section>
 
@@ -42,28 +72,22 @@
             <p class="seccion__subtitulo">Aquí tienes una lista de las tecnologías y herramientas que manejo.</p>
             <div class="conocimientos__grilla">
                 <article class="tarjeta__conocimiento">
-                    <img src="img/html5.svg" alt="Logo de HTML 5">
+                    <img src="img/logo-html5.jpg" alt="Logo de HTML 5">
                     <p>HTML 5</p>
                 </article>
                 <article class="tarjeta__conocimiento">
-                    <img src="img/javascript.svg" alt="Logo de JavaScript">
+                    <img src="img/logo-JS.png" alt="Logo de JavaScript">
                     <p>JavaScript</p>
                 </article>
                 <article class="tarjeta__conocimiento">
-                    <img src="img/git.svg" alt="Logo de GIT">
+                    <img src="img/logo-GitHub.png" alt="Logo de GIT">
                     <p>GIT</p>
                 </article>
+                <article class="tarjeta__conocimiento">
+                    <img src="img/logo-CSS.jpg" alt="Logo de CSS">
+                    <p>CSS 3</p>
+                </article>
             </div>
-        </section>
-
-        <section class="seccion cita__destacada">
-            <blockquote class="cita__bloque">
-                <span class="cita__comillas">"</span>
-                <p class="cita__texto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis neque id ipsum
-                    iure velit magni dolorum a quasi impedit, ducimus eaque modi, deleniti labore libero nobis amet
-                    ipsam dolorem. Quos!</p>
-                <cite class="cita__autor">brenda romero</cite>
-            </blockquote>
         </section>
 
         <section id="proyectos" class="seccion proyectos">
