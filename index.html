@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Personal | Brenda Romero</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
     <header class="encabezado">
-        <a href="#sobre-mi" class="encabezado__logo">Brenda Romero</a>
-
         <nav class="menu__principal">
             <ul class="menu__lista">
-                <li><a href="#sobre-mi" class="menu__enlace">HOLA</a></li>
-                <li><a href="#proyectos" class="menu__enlace">CONOCIMIENTOS</a></li>
-                <li><a href="#habilidades" class="menu__enlace">PROYECTOS</a></li>
+                <li><a href="#sobre-mi" class="menu__enlace menu__activo">HOLA</a></li>
+                <li><a href="#conocimientos" class="menu__enlace">CONOCIMIENTOS</a></li>
+                <li><a href="#proyectos" class="menu__enlace">PROYECTOS</a></li>
                 <li><a href="#contacto" class="menu__enlace-boton">CONTACTO</a></li>
             </ul>
         </nav>
@@ -26,12 +25,14 @@
         <section id="sobre-mi" class="seccion presentacion-inicial">
             <div class="presentacion__contenedor">
                 <div class="presentacion__texto">
-                    <h1>¡Hola! Soy <span class="nombre-destacado">Brenda Romero</span></h1>
-                    <p>Descripción personal: Desarrolladora, ETC</p>
+                    <h1>¡Hola! Soy <span class="nombre-destacado">BRENDA ROMERO</span></h1>
+                    <p>Descripción personal: Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde labore
+                        mollitia quod perferendis a officiis quasi tenetur ipsum quos dolores hic natus perspiciatis,
+                        excepturi tempora atque pariatur cupiditate numquam officia.</p>
                     <a href="#conocimientos" class="boton__primario">LO QUE HAGO</a>
                 </div>
                 <figure class="presentacion__imagen">
-                    <img src="img/ilustracion-brenda.png" alt="Ilustración de Brenda Romero">
+                    <img src="img/presentacion.png" alt="Ilustración de Presentacion">
                 </figure>
             </div>
         </section>
@@ -57,6 +58,7 @@
 
         <section class="seccion cita__destacada">
             <blockquote class="cita__bloque">
+                <span class="cita__comillas">"</span>
                 <p class="cita__texto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis neque id ipsum
                     iure velit magni dolorum a quasi impedit, ducimus eaque modi, deleniti labore libero nobis amet
                     ipsam dolorem. Quos!</p>
@@ -68,32 +70,60 @@
             <h2 class="seccion__titulo">Mis Proyectos</h2>
             <p class="seccion__subtitulo">Aquí tienes una lista de mis proyectos más recientes.</p>
             <div class="proyectos__grilla">
+
                 <article class="proyectos__tarjeta">
-                    <h3 class="proyectos__titulo">Nombre del Proyecto</h3>
+                    <a href="URL_A_TU_PROYECTO_1" target="_blank" class="proyecto__enlace">
+                        <figure class="proyecto__imagen">
+                            <img src="img/captura-proyecto-1.png" alt="Miniatura del proyecto 1: Nombre del Proyecto.">
+                        </figure>
+                        <h3 class="proyectos__titulo">Nombre del Proyecto 1</h3>
+                    </a>
                 </article>
+
                 <article class="proyectos__tarjeta">
-                    <h3 class="proyectos__titulo">Nombre del Proyecto</h3>
+                    <a href="URL_A_TU_PROYECTO_2" target="_blank" class="proyecto__enlace">
+                        <figure class="proyecto__imagen">
+                            <img src="img/captura-proyecto-2.png" alt="Miniatura del proyecto 2: Nombre del Proyecto.">
+                        </figure>
+                        <h3 class="proyectos__titulo">Nombre del Proyecto 2</h3>
+                    </a>
                 </article>
+
                 <article class="proyectos__tarjeta">
-                    <h3 class="proyectos__titulo">Nombre del Proyecto</h3>
+                    <a href="URL_A_TU_PROYECTO_3" target="_blank" class="proyecto__enlace">
+                        <figure class="proyecto__imagen">
+                            <img src="img/captura-proyecto-3.png" alt="Miniatura del proyecto 3: Nombre del Proyecto.">
+                        </figure>
+                        <h3 class="proyectos__titulo">Nombre del Proyecto 3</h3>
+                    </a>
                 </article>
+
             </div>
         </section>
 
         <section id="contacto" class="seccion contacto">
             <div class="contacto__contenedor">
                 <div class="contacto__info">
-                    <h2 class="contacto__titulo">Contactame</h2>
+                    <h2 class="contacto__titulo">CONTACTAME</h2>
                     <p>Estoy disponible para nuevos proyectos y oportunidades laborales. ¡Hablemos!</p>
                     <address class="contacto__redes">
-                        <p class="redes__item">Numero Telefono (Wpp)</p>
-                        <p class="redes__item">Usuario IG</p>
-                        <p class="redes__item">brennahirromero@mail.com</p>
+                        <a href="https://wa.me/XXXXXXXXXX" target="_blank" class="redes__item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>(+54) 2975139886</span>
+                        </a>
+                        <a href="mailto:brennahirromero@mail.com" class="redes__item">
+                            <i class="fas fa-envelope"></i>
+                            <span>brennahirromero@mail.com</span>
+                        </a>
+                        <a href="URL_A_TU_LINKEDIN" target="_blank" class="redes__item">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn / BrendaRomero</span>
+                        </a>
                     </address>
                 </div>
 
                 <form action="#" method="POST" class="contacto__formulario">
-                    <h3 class="formulario__titulo">Escribime</h3>
+                    <h3 class="formulario__titulo">ESCRIBIME</h3>
 
                     <div class="formulario__grupo-campos">
                         <div class="campo__simple">
@@ -108,12 +138,13 @@
 
                     <div class="campo__simple">
                         <label for="email">Email*</label>
-                        <input type="email" id="email" name="email" placeholder="ej: brenda.romero@mail.com" required>
+                        <input type="email" id="email" name="email" placeholder="ej: brenda.romero@gmail.com" required>
                     </div>
 
                     <div class="campo__simple">
                         <label for="mensaje">Mensaje*</label>
-                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escriba un mensaje aquí" required></textarea>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escriba un mensaje aquí"
+                            required></textarea>
                     </div>
 
                     <button type="submit" class="boton__primario">Enviar</button>
@@ -121,7 +152,7 @@
         </section>
     </main>
 
-     <footer class="pie-pagina">
+    <footer class="pie-pagina">
         <nav class="menu__pie">
             <ul class="menu__lista">
                 <li><a href="#sobre-mi" class="menu__enlace">HOLA</a></li>
@@ -132,9 +163,9 @@
         </nav>
 
         <div class="pie__redes-sociales">
-            <a href="URL_WPP" aria-label="WhatsApp">Icono</a>
-            <a href="URL_LINKEDIN" aria-label="LinkedIn">Icono</a>
-            <a href="URL_INSTAGRAM" aria-label="Instagram">Icono</a>
+            <a href="URL_WPP" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="URL_LINKEDIN" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="URL_INSTAGRAM" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
 
         <p class="pie__copyright">Hecho con ❤️ por Brenda Romero</p>

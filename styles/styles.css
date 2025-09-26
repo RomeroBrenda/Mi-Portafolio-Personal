@@ -1,38 +1,94 @@
 /*RESET Y VARIABLES*/
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    font-size: 62.5%;
+    /*1rem = 10px (62.5% de 16px)*/
+    scroll-behavior: smooth;
+    /*Desplazamiento suave al hacer clic en enlaces internos*/
+}
+
 :root {
+    /*COLORES BASE DEL GRADIENTE*/
+    --color-rosa-principal: #ED7E94;
+    /* Rosa Fuerte (Punto de inicio) */
+    --color-purpura-acento: #8482E8;
+    /* Púrpura Eléctrico (Corazón del gradiente/Acento) */
+    --color-azul-secundario: #94BBE9;
+    /* Azul Suave (Tono de fondo/Hover) */
+
+    /*GRADIENTES */
+    /* Gradiente Principal (Para Cita y Footer) */
+    --gradiente-principal: radial-gradient(circle, var(--color-rosa-principal) 0%, var(--color-purpura-acento) 96%, var(--color-azul-secundario) 99%);
+    /*BOTONES (Más dinámico, de rosa a azul) */
+    --gradiente-boton: linear-gradient(45deg, var(--color-rosa-principal), var(--color-azul-secundario));
+    /* Gradiente Inverso para HOVER */
+    --gradiente-inverso: linear-gradient(225deg, var(--color-rosa-principal), var(--color-azul-secundario));
+
+    /* FONDOS Y TEXTOS (MODO CLARO) */
+    --color-fondo-claro: #FFFFFF;
+    --color-fondo-oscuro: #F4F4F9;
+    --color-texto-principal: #212121;
+    --color-texto-secundario: #757575;
+    --color-texto-destacado: #FFFFFF;
+
+    /*TIPOGRAFIA*/
+    --fuente-principal: 'Poppins';
+    --fuente-titulos: Arial, sans-serif;
+
+    /*ESPACIADO*/
     --espaciado-principal: 2rem;
     --ancho-maximo: 120rem;
 }
 
 body {
-    font-size: 1rem;
+    font-size: 1.6rem;
     line-height: 1.6;
+    font-family: var(--fuente-principal);
+    color: var(--color-texto-principal);
+    background-color: var(--color-fondo-claro);
 }
 
-ul { list-style: none; }
-a { text-decoration: none; }
-img { max-width: 100%; height: auto; }
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 /*
 ============================
 ESTILOS GENERALES (MOBILE FIRST)
 ============================
 */
+
+/*SECCIONES*/
 .seccion {
     padding: 6rem var(--espaciado-principal);
     text-align: center;
+    background-color: var(--color-fondo-claro);
+}
+
+.presentacion-inicial,
+.contacto {
+    background-color: var(--color-fondo-oscuro);
 }
 
 .seccion__titulo {
     font-size: 3rem;
     margin-bottom: 1rem;
+    font-family: var(--fuente-titulos);
 }
 
 .seccion__subtitulo {
@@ -50,13 +106,18 @@ ESTILOS GENERALES (MOBILE FIRST)
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
+    background: var(--gradiente-boton);
+    color: var(--color-texto-destacado);
+    transition: all 0.4s ease;
+    border: none;
 }
 
-/*
+
 .boton__primario:hover {
-
+    background: var(--gradiente-inverso);
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0 2rem rgba(237, 126, 148, 0.5);
 }
-*/
 
 /*
 ============================
@@ -64,42 +125,62 @@ ENCABEZADO Y NAVEGACIÓN
 ============================
 */
 .encabezado {
-    padding: 1.5rem var(--espaciado-principal);
+    padding: 1rem 1rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    border-bottom: 0.1rem solid black;
+    border-bottom: 0.1rem solid var(--color-fondo-oscuro);
+    background-color: var(--color-fondo-claro);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /*Asegura que siempre esté por encima del contenido*/
 }
 
 .encabezado__logo {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
+    color: var(--color-purpura-acento)
 }
 
 .menu__lista {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    flex-direction: row;
+    gap: 0.8rem;
     align-items: center;
 }
 
 .menu__enlace {
-    padding: 0.8rem 1.5rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 1.5rem;
     font-weight: 500;
+    transition: color 0.3s;
 }
 
-/*
-.menu__enlace:hover {
- 
+.menu__enlace:hover,
+.menu__activo {
+    color: var(--color-purpura-acento);
 }
-*/
 
 /*BOTON de CONTACTO en el HEADER*/
 .menu__enlace-boton {
-    padding: 0.8rem 1.5rem;
-    border-radius: 2rem;
-    margin-top: 0.5rem;
+    background: var(--gradiente-boton);
+    color: var(--color-texto-destacado);
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 1.4rem;
+}
+
+.menu__enlace-boton:hover {
+    background: var(--gradiente-inverso);
+    box-shadow: 0 0.5rem 1rem rgba(132, 130, 232, 0.3);
+    transform: translateY(-0.1rem);
 }
 
 /*
@@ -107,23 +188,24 @@ ENCABEZADO Y NAVEGACIÓN
 SECCION PRESENTACION (PRESENTACION INICIAL)
 ============================
 */
-/*.presentacion-inicial {
-
+.presentacion-inicial,
+.contacto {
+    background-color: var(--color-fondo-oscuro);
 }
-*/
 
 .presentacion__texto h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
     line-height: 1.2;
 }
-/*
-.presentacion__texto .nombre-destacado {
 
+.presentacion__texto .nombre-destacado {
+    color: var(--color-purpura-acento);
+    transition: color 0.3s;
 }
-*/
 
 .presentacion__texto p {
+    color: var(--color-texto-secundario);
     font-size: 1.8rem;
     margin-bottom: 2.5rem;
 }
@@ -134,7 +216,15 @@ SECCION PRESENTACION (PRESENTACION INICIAL)
 
 .presentacion__imagen img {
     border-radius: 1rem;
-    max-width: 30rem; /*Limita el tamaño de la imagen en Movil*/
+    max-width: 30rem;
+    /*Limita el tamaño de la imagen en Movil*/
+    border: 0.5rem solid transparent;
+    box-shadow: 0 0 0 0.5rem var(--color-purpura-acento),
+        0 0 0 0.7rem var(--color-rosa-principal);
+}
+
+.presentacion__texto .nombre-destacado:hover {
+    color: var(--color-rosa-principal);
 }
 
 /*
@@ -142,13 +232,29 @@ SECCION PRESENTACION (PRESENTACION INICIAL)
 CITA DESTACADA
 ============================
 */
-.cita-destacada {
+.cita__destacada {
+    background: var(--gradiente-principal);
+    /*Degradado de IZQ a DER*/
+    color: var(--color-texto-destacado);
     padding: 8rem var(--espaciado-principal);
 }
 
 .cita__bloque {
     max-width: 60rem;
     margin: 0 auto;
+    position: relative;
+}
+
+.cita__comillas {
+    font-size: 10rem;
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    color: rgba(255, 255, 255, 0.3);
+    /*Color blanco con opacidad*/
+    transform: translateX(-50%);
+    font-family: var(--fuente-titulos);
+    line-height: 0;
 }
 
 .cita__texto {
@@ -179,30 +285,36 @@ GRILLAS Y TARJETAS (CONOCIMIENTOS Y PROYECTOS)
 /*TARJETAS BASE*/
 .tarjeta__conocimiento,
 .proyectos__tarjeta {
+    background-color: var(--color-fondo-claro);
+    box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
     padding: 2rem;
     border-radius: 1rem;
     width: 90%;
     max-width: 30rem;
     text-align: center;
+    transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+    border: 0.2rem solid transparent;
 }
 
-/*
 .tarjeta__conocimiento:hover,
 .proyectos__tarjeta:hover {
-
+    transform: translateY(-0.5rem);
+    border: 0.2rem solid var(--color-purpura-acento);
+    box-shadow: 0 0.8rem 1.2rem rgba(153, 51, 204, 0.2);
 }
-*/
 
 /*CONOCIMIENTOS*/
 .tarjeta__conocimiento img {
     width: 5rem;
     height: 5rem;
     margin-bottom: 1rem;
+    filter: drop-shadow(0 0 0.5rem var(--color-rosa-principal));
 }
 
 .tarjeta__conocimiento p {
     font-size: 1.6rem;
     font-weight: bold;
+    color: var(--color-texto-principal);
 }
 
 /*PROYECTOS*/
@@ -210,12 +322,14 @@ GRILLAS Y TARJETAS (CONOCIMIENTOS Y PROYECTOS)
 .productos__titulo {
     font-size: 1.8rem;
     margin-top: 1rem;
+    color: var(--color-texto-principal);
 }
 
 .proyecto__enlace {
     text-decoration: none;
     color: inherit;
-    display: block; /*Ocupa todo el espacio de la tarjeta*/
+    display: block;
+    /*Ocupa todo el espacio de la tarjeta*/
 }
 
 /*
@@ -224,29 +338,54 @@ CONTACTO Y FORMULARIO
 ============================
 */
 
-/*
-.seccion__contacto {
-
-}
-*/
-
 .contacto__contenedor {
     padding: 3rem;
     border-radius: 1rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    background-color: var(--color-fondo-claro);
+    box-shadow: 0 0.8rem 1.2rem rgba(0, 0, 0, 0.15);
 }
 
 .contacto__info {
-    margin-bottom: 3rem; /*Espacio entre la info y el formulario*/
+    margin-bottom: 3rem;
+    /*Espacio entre la info y el formulario*/
+    text-align: left;
+    padding-bottom: 2rem;
+    border-bottom: 0.1 rem solid var(--color-fondo-oscuro);
 }
 
-/*
 .contacto__titulo {
-
+    color: var(--color-purpura-acento);
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
-*/
 
 .contacto__redes {
     margin-top: 2rem;
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.redes__item {
+    display: flex; 
+    align-items: center;
+    gap: 1rem; 
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--color-texto-principal);
+    transition: color 0.3s;
+}
+
+.redes__item i {
+    /*Estilo del ícono*/
+    color: var(--color-rosa-principal); 
+    font-size: 2.2rem;
+}
+
+.redes__item:hover {
+    color: var(--color-purpura-acento); 
 }
 
 /*CAMPOS DEL FORMULARIO*/
@@ -256,7 +395,8 @@ CONTACTO Y FORMULARIO
 }
 
 .campo__simple label {
-    display: block; /*La etiqueta ocupa su propia linea*/
+    display: block;
+    /*La etiqueta ocupa su propia linea*/
     margin-bottom: 0.5rem;
     font-weight: bold;
     font-size: 1.4rem;
@@ -266,22 +406,33 @@ CONTACTO Y FORMULARIO
 .campo__simple textarea {
     width: 100%;
     padding: 1rem;
-    border: 0.1rem solid black;
+    border: 0.1rem solid var(--color-texto-secundario);
     border-radius: 0.5rem;
     font-size: 1.6rem;
+    font-family: var(--fuente-principal);
+    transition: border-color 0.3s, outline 0.3s;
 }
 
 .campo__simple input:focus,
 .campo__simple textarea:focus {
-    outline: 0.2rem solid red;
-    border-color: black;
+    outline: 0.2rem solid var(--color-primario);
+    border-color: var(--color-primario);
 }
 
 .contacto__formulario .boton__primario {
     width: 100%;
-    max-width: 25rem; /* Limita el ancho del botón */
+    max-width: 25rem;
+    /* Limita el ancho del botón */
     margin-left: auto;
     margin-right: auto;
+}
+
+.formulario__titulo {
+    color: var(--color-purpura-acento);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: var(--fuente-titulos);
 }
 
 /* 
@@ -294,9 +445,11 @@ PIE DE PÁGINA
     padding: 4rem var(--espaciado-principal);
     text-align: center;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 2rem;
     align-items: center;
+    background: var(--gradiente-principal);
+    color: var(--color-texto-destacado);
 }
 
 .menu__pie .menu__lista {
@@ -307,10 +460,17 @@ PIE DE PÁGINA
 .pie__redes-sociales a {
     margin: 0 1rem;
     font-size: 2rem;
+    color: var(--color-texto-destacado);
+    transition: opacity 0.3s;
+}
+
+.pie__redes-sociales a:hover {
+    opacity: 0.4;
 }
 
 .pie__copyright {
     font-size: 1.4rem;
+    color: lightgrey;
 }
 
 /* 
@@ -318,12 +478,3 @@ PIE DE PÁGINA
 RESPONSIVE (MEDIA QUERIES)
 ======================================= 
 */
-
-
-
-
-
-
-
-
-
