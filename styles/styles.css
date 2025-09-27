@@ -91,6 +91,7 @@ ESTILOS GENERALES (MOBILE FIRST)
     font-family: var(--fuente-titulos);
     font-weight: bold;
     text-transform: uppercase;
+    color: var(--color-purpura-acento);
 }
 
 .seccion__subtitulo {
@@ -157,13 +158,13 @@ ENCABEZADO Y NAVEGACIÓN
 .menu__lista {
     display: flex;
     flex-direction: row;
-    gap: 0.8rem;
+    gap: 0.2rem;
     align-items: center;
 }
 
 .menu__enlace {
-    padding: 0.3rem 0.5rem;
-    font-size: 1.3rem;
+    padding: 0.1rem 0.2rem;
+    font-size: 1.2rem;
     font-weight: 500;
     transition: color 0.3s;
     white-space: nowrap;
@@ -178,13 +179,13 @@ ENCABEZADO Y NAVEGACIÓN
 .menu__enlace-boton {
     background: var(--gradiente-boton);
     color: var(--color-texto-destacado);
-    padding: 0.5rem 0.8rem;
+    padding: 0.3rem 0.6rem;
     border-radius: 0.5rem;
     margin-top: 0;
     text-transform: uppercase;
     font-weight: 500;
     transition: all 0.3s ease;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     flex-shrink: 0;
     /*Evita que el botón se reduzca*/
 }
@@ -218,7 +219,7 @@ SECCION PRESENTACION (PRESENTACION INICIAL)
 }
 
 .presentacion__texto h1 {
-    font-size: 4.5rem;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
     line-height: 1.1;
     text-transform: uppercase;
@@ -230,13 +231,19 @@ SECCION PRESENTACION (PRESENTACION INICIAL)
 .presentacion__texto .nombre-destacado {
     color: var(--color-rosa-principal);
     transition: color 0.3s;
-    display: block;
     /*Forzamos que el "rol" vaya abajo de "nombre"*/
     font-size: 2.8rem;
     font-weight: 400;
     /*Brillo sutil Neon*/
     text-shadow: 0 0 10px var(--color-rosa-principal),
         0 0 20px rgba(255, 0, 100, 0.4);
+
+    display: inline-block;
+    background-color: rgba(132, 130, 232, 0.3); 
+    padding: 0.5rem 1rem; 
+    border-radius: 0.5rem; 
+    line-height: 1.2; 
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2); 
 }
 
 .presentacion__texto p {
@@ -272,7 +279,8 @@ SOBRE MI
     /* El texto va primero en móvil */
 }
 
-.mi-presentacion-completa .seccion__titulo {
+.mi-presentacion-completa .seccion__titulo,
+.formulario__titulo {
     color: var(--color-purpura-acento);
     text-align: center;
     margin-bottom: 3rem;
@@ -292,17 +300,13 @@ SOBRE MI
     padding-left: 2.5rem;
     border-radius: 1rem;
     margin-bottom: 3rem;
-    list-style: none;
     display: flex;
     flex-direction: column;
     gap: 1.5rem; 
 }
 
 .sobre-mi__lista-pilares li {
-    font-size: 1.6rem;
-    margin-bottom: 0;
-    list-style: none; 
-    text-indent: 0;    
+    font-size: 1.6rem;  
     /* ÉNFASIS VISUAL PARA EL TEXTO DEL ÍTEM */
     font-weight: 500; 
     color: var(--color-texto-principal);
@@ -369,6 +373,7 @@ GRILLAS Y TARJETAS (CONOCIMIENTOS Y PROYECTOS)
     transform: translateY(-0.5rem);
     border: 0.1rem solid var(--color-purpura-acento);
     box-shadow: 0 0.8rem 1.2rem rgba(153, 51, 204, 0.2);
+    
 }
 
 /*CONOCIMIENTOS*/
@@ -420,7 +425,7 @@ CONTACTO Y FORMULARIO
     /*Espacio entre la info y el formulario*/
     text-align: left;
     padding-bottom: 2rem;
-    border-bottom: 0.1 rem solid var(--color-fondo-oscuro);
+    border-bottom: 0.2rem solid var(--color-fondo-oscuro);
 }
 
 .contacto__titulo {
@@ -483,8 +488,8 @@ CONTACTO Y FORMULARIO
 
 .campo__simple input:focus,
 .campo__simple textarea:focus {
-    outline: 0.2rem solid var(--color-primario);
-    border-color: var(--color-primario);
+    outline: 0.2rem solid var(--color-purpura-acento);
+    border-color: var(--color-purpura-acento);
 }
 
 .contacto__formulario .boton__primario {
@@ -547,7 +552,7 @@ RESPONSIVE (MEDIA QUERIES)
 ======================================= 
 */
 /* TABLETAS Y PANTALLAS MEDIANAS (768px en adelante) */
-@media (min-width: 768px & max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .seccion {
         padding: 8rem 4rem;
     }
@@ -564,7 +569,7 @@ RESPONSIVE (MEDIA QUERIES)
     }
     .presentacion__texto .nombre-destacado {
         font-size: 3.5rem; 
-        display: inline; /* Pone el rol junto al nombre */
+        display: inline-block; /* Pone el rol junto al nombre */
         margin-left: 1.5rem;
     }
     .presentacion-inicial {
