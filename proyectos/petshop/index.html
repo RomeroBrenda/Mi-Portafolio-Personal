@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <div class="encabezado__barra-superior">
+            <span>Grandes ofertas en comederos</span>
+            <div class="encabezado__selector-idioma">
+                <p>Español</p>
+                <p>SARG</p>
+            </div>
+        </div>
+
+        <nav class="navegacion">
+            <div class="navegacion__logo">
+                <i class="fas fa-paw"></i>
+                <span>Front Cat&Dog</span>
+                <i class="fas fa-paw"></i>
+            </div>
+            <ul class="navegacion__lista">
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Pets</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Contactenos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+        <section class="seccion-principal">
+            <img class="seccion-principal__imagen" src="img/portada.jpg" alt="Portada para PetShop">
+
+            <div class="seccion-principal__contenido">
+                <h1>¡Es un placer tenerte aqui!</h1>
+                <h2>¡Comederos en descuento!</h2>
+                <a href="#productos" class="seccion-principal__boton">COMEDEROS</a>
+            </div>
+        </section>
+
+        <section class="productos">
+            <div class="productos__encabezado">
+                <i class="fas fa-paw"></i>
+                <h2>Productos Destacados</h2>
+            </div>
+            <div class="productos__categorias">
+                <span>Comederos</span>
+                <span>Accesorios</span>
+                <span>Comida</span>
+            </div>
+            <div class="productos__catalogo">
+                <article class="tarjeta-producto">
+                    <img src="https://agomezjuan.github.io/CatDog/img/churrasquito.png" alt="Juguete Charrasquito">
+                    <h3>Juguete Charrasquito</h3>
+                    <p>$5.000</p>
+                </article>
+                <article class="tarjeta-producto">
+                    <img src="https://acdn-us.mitiendanube.com/stores/001/365/307/products/h66f0dc7e8a8a4bfe9179c222c535df07g1-6bfc2ca4e7d6727ebb16506730669494-1024-1024.jpg"
+                        alt="Comedero para perro">
+                    <h3>Comedero para perro</h3>
+                    <p>$15.000</p>
+                </article>
+                <article class="tarjeta-producto">
+                    <img src="https://d28hi93gr697ol.cloudfront.net/071e89ac-46a5-8ab3/img/Producto/1618/03-1612902132-6321290539815.jpeg"
+                        alt="Juguete Huesito">
+                    <h3>Juguete Huesito</h3>
+                    <p>$7.500</p>
+                </article>
+            </div>
+        </section>
+
+    <section class="contacto">
+            <h2 class="contacto__titulo">Contáctanos</h2>
+            <form class="formulario">
+                <input type="text" placeholder="Nombre y Apellido">
+                <input type="email" placeholder="Ingresá tu correo electrónico">
+                <input type="text" placeholder="Teléfono">
+                <div class="formulario__botones">
+                    <button type="reset">Resetear</button>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+    </section>
+    </main>    
+
+        <div class="info-adicional">
+            <section class="info-adicional__seccion">
+                <p>Suscríbete para más novedades</p>
+                <input type="email" placeholder="Ingresá tu correo electrónico">
+                <button>Suscribirse</button>
+            </section>
+            <section class="info-adicional__seccion info-adicional__seccion--contacto">
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" placeholder="Localidad">
+                </div>
+                <div>
+                    <i class="fas fa-phone-alt"></i>
+                    <input type="text" placeholder="Teléfono">
+                </div>
+                <div>
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Correo Electrónico">
+                </div>
+            </section>
+            <div class="info-adicional__logo">
+                <i class="fas fa-paw"></i>
+                <span>Front Cat&Dog</span>
+            </div>
+        </div>
+
+    <footer class="pie-pagina">
+        <p>Todos los derechos reservados Front End</p>
+    </footer>
+</body>
+</html>

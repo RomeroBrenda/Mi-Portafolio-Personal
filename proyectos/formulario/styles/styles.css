@@ -1,0 +1,101 @@
+body {
+    background-color: #dfecf7;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.fila {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.fila span {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.nota {
+    margin-top: 3px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* --- Reglas de Validación --- */
+
+/* Todos los inputs son gris por defecto */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc; 
+    box-sizing: border-box;
+    width: 100%; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* 🟢 VERDE: Válido y no vacío */
+/* Se activa si el contenido es correcto */
+input:valid:not(:placeholder-shown) {
+    border: 1px solid #4CAF50; 
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); 
+}
+
+/* 🔴 ROJO: Inválido y con contenido (Mantiene el color al desenfocar) */
+input:invalid:not(:placeholder-shown) {
+    border: 1px solid #f44336; 
+    box-shadow: 0 0 5px rgba(244, 67, 54, 0.5);
+}
+
+/* 🔴 ROJO FUERTE: Para darle énfasis al enfocar (sombra un poco más visible) */
+input:invalid:focus:not(:placeholder-shown) {
+    box-shadow: 0 0 8px rgba(244, 67, 54, 0.7); 
+}
+
+/* GRIS por defecto: Solo si el campo es inválido y está vacío (al inicio) */
+input:invalid:placeholder-shown {
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+
+/* Excluimos el checkbox de las reglas de color */
+input[type="checkbox"]:valid,
+input[type="checkbox"]:invalid {
+    border: initial; 
+    box-shadow: none; 
+}
+
+.fila-terminos {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background-color: #45a049;
+}

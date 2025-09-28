@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Cliente</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<section class="contenedor">
+    <h2>Registro de Cliente</h2>
+    <form>
+        <!-- Nombre y Apellido -->
+        <label class="fila">
+            <span>Nombre</span>
+            <input type="text" name="nombre" placeholder="Ej: Brenda" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+" title="Solo se permiten letras" required>
+        </label>
+        
+        <label class="fila">
+            <span>Apellido</span>
+            <input type="text" name="apellido" placeholder="Ej: Romero" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+" title="Solo se permiten letras" required>
+        </label>
+
+        <!-- DNI y Email -->
+        <label class="fila">
+            <span>DNI</span>
+            <input type="number" name="dni" placeholder="12345678" min="1000000" max="99999999" required>
+        </label>
+
+        <label class="fila">
+            <span>Correo electrónico</span>
+            <input type="email" name="email" placeholder="adalovelace@gmail.com" required>
+        </label>
+
+        <!-- Contraseña y repetir contraseña -->
+        <label class="fila">
+            <span>Contraseña</span>
+            <input type="password" name="password" placeholder="8-16 caracteres" minlength="8" maxlength="16" required>
+            <p class="nota">La contraseña debe tener como mínimo 8 caracteres y como máximo 16</p>
+        </label>
+
+        <label class="fila">
+            <span>Repetir contraseña</span>
+            <input type="password" name="repetirPassword" placeholder="Repita su contraseña" minlength="8" maxlength="16" required>
+        </label>
+
+        <!-- Términos y botón -->
+        <label class="fila-terminos">
+            <input type="checkbox" name="terminos" required>
+            Acepto los términos y condiciones
+        </label>
+
+        <button type="submit">Registrarse</button>
+
+    </form>
+</section>
+
+</body>
+</html>

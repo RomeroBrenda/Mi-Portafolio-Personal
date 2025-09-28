@@ -417,7 +417,7 @@ GRILLAS Y TARJETAS (CONOCIMIENTOS Y PROYECTOS)
 
 /*PROYECTOS*/
 .proyectos__tarjeta,
-.productos__titulo {
+.proyectos__titulo {
     font-size: 1.8rem;
     margin-top: 1rem;
     color: var(--color-texto-principal);
@@ -524,9 +524,6 @@ CONTACTO Y FORMULARIO
 .contacto__formulario .boton__primario {
     width: 100%;
     max-width: 25rem;
-    /* Limita el ancho del botón */
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .formulario__titulo {
@@ -758,8 +755,11 @@ RESPONSIVE (MEDIA QUERIES)
         padding-bottom: 0;
     }
 
-    .contacto__formulario {
+    .contacto__formulario .boton__primario {
         width: 55%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .formulario__grupo-campos {
