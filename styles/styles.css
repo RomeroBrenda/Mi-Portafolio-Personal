@@ -138,6 +138,7 @@ ENCABEZADO Y NAVEGACIÓN
     top: 0;
     z-index: 1000;
     /*Asegura que siempre esté por encima del contenido*/
+    box-shadow: 0 0.5rem 1rem rgba(148, 187, 233, 0.4);
 }
 
 .encabezado__logo {
@@ -286,6 +287,10 @@ SOBRE MI
     margin-bottom: 3rem;
 }
 
+.sobre-mi__contenedor p span {
+    font-weight: bold; 
+}
+
 .seccion__parrafo-inicial,
 .seccion__parrafo-final {
     font-size: 1.7rem;
@@ -316,7 +321,7 @@ SOBRE MI
 }
 
 .sobre-mi__lista-pilares li i {
-    color: var(--color-rosa-principal);
+    color: var(--color-azul-secundario);
     margin-right: 0;
     font-size: 1.8rem;
     transition: transform 0.3s;
@@ -325,12 +330,20 @@ SOBRE MI
 
 .sobre-mi__lista-pilares li:hover i {
     transform: scale(1.1);
-    color: var(--color-purpura-acento);
+    color: var(--color-rosa-principal);
 }
 
 .pilar__titulo {
     font-weight: bold;
     color: var(--color-purpura-acento);
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2rem;
+     box-shadow: 
+        inset 0 0 0 0.1rem rgba(148, 187, 233, 0.6), /* Borde interno suave azul */
+        0 0.2rem 0.5rem rgba(0, 0, 0, 0.08); /* Sombra exterior suave para "levantar" */
+    background-color: var(--color-fondo-claro); 
+    display: inline-block; 
 }
 
 .pilar__contenido p {
@@ -358,7 +371,7 @@ GRILLAS Y TARJETAS (CONOCIMIENTOS Y PROYECTOS)
 /*TARJETAS BASE*/
 .tarjeta__conocimiento,
 .proyectos__tarjeta {
-    background-color: var(--color-fondo-claro);
+    background-color: var(--color-fondo-oscuro);
     box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
     padding: 2rem;
     border-radius: 1rem;
@@ -440,6 +453,10 @@ CONTACTO Y FORMULARIO
     border-bottom: 0.2rem solid var(--color-fondo-oscuro);
 }
 
+.contacto__info p span {
+    font-weight: bold;
+}
+
 .contacto__titulo {
     color: var(--color-purpura-acento);
     font-size: 3rem;
@@ -500,8 +517,8 @@ CONTACTO Y FORMULARIO
 
 .campo__simple input:focus,
 .campo__simple textarea:focus {
-    outline: 0.2rem solid var(--color-purpura-acento);
-    border-color: var(--color-purpura-acento);
+    outline: 0.2rem solid var(--color-azul-secundario);
+    border-color: var(--color-azul-secundario);
 }
 
 .contacto__formulario .boton__primario {
@@ -570,7 +587,7 @@ PIE DE PÁGINA
 
 .pie__copyright {
     font-size: 1.4rem;
-    color: lightgrey;
+    color: var(--color-azul-secundario);
 }
 
 /* 
